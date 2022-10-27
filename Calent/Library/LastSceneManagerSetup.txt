@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Sci-Fi Weapons/Base Pack/Example.unity
+- path: Assets/Scenes/Game.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
