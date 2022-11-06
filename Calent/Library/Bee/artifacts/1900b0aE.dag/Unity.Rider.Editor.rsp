@@ -118,6 +118,7 @@
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
 -define:ENABLE_LEGACY_INPUT_MANAGER
+-define:FISHNET
 -define:TEST_FRAMEWORK
 -define:ROSLYN_ANALYZER_FIX
 -define:CSHARP_7_OR_LATER
@@ -341,6 +342,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+-analyzer:"Assets/FishNet/Plugins/CodeAnalysis/FishNet.CodeAnalysis.Analyzers.dll"
 "Library/PackageCache/com.unity.ide.rider@3.0.15/Rider/Editor/Discovery.cs"
 "Library/PackageCache/com.unity.ide.rider@3.0.15/Rider/Editor/EditorPluginInterop.cs"
 "Library/PackageCache/com.unity.ide.rider@3.0.15/Rider/Editor/LoggingLevel.cs"

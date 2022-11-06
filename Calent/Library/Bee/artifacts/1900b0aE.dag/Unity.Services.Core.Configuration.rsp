@@ -121,8 +121,10 @@
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
 -define:ENABLE_LEGACY_INPUT_MANAGER
+-define:FISHNET
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/FishNet/Plugins/CodeAnalysis/FishNet.CodeAnalysis.dll"
 -r:"D:/GitHub/Calent/Calent/Library/PackageCache/com.unity.collab-proxy@1.17.2/Lib/Editor/PlasticSCM/log4netPlastic.dll"
 -r:"D:/GitHub/Calent/Calent/Library/PackageCache/com.unity.collab-proxy@1.17.2/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll"
 -r:"D:/GitHub/Calent/Calent/Library/PackageCache/com.unity.collab-proxy@1.17.2/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll"
@@ -347,6 +349,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Services.Core.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+-analyzer:"Assets/FishNet/Plugins/CodeAnalysis/FishNet.CodeAnalysis.Analyzers.dll"
 "Library/PackageCache/com.unity.services.core@1.4.2/Runtime/Configuration/AssemblyInfo.cs"
 "Library/PackageCache/com.unity.services.core@1.4.2/Runtime/Configuration/CloudProjectId.cs"
 "Library/PackageCache/com.unity.services.core@1.4.2/Runtime/Configuration/ConfigurationCollectionHelper.cs"
