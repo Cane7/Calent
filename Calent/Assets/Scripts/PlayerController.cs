@@ -4,6 +4,7 @@ using UnityEngine;
 using FishNet.Connection;
 using FishNet.Object;
 
+
 //This is made by Bobsi Unity - Youtube
 public class PlayerController : NetworkBehaviour
 {
@@ -14,6 +15,9 @@ public class PlayerController : NetworkBehaviour
     public float gravity = 20.0f;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
+
+
+
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
