@@ -12,7 +12,7 @@ public class PauseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Tab))
         {
             if(isPaused == true)
             {
@@ -29,13 +29,13 @@ public class PauseScript : MonoBehaviour
 
     public void PauseGame()
     {
-        pauseMenu.SetActive(false);
+        pauseMenu.SetActive(true);
         isPaused = true;
     }
 
     public void ResumeGame()
     {
-        pauseMenu.SetActive(true);
+        pauseMenu.SetActive(false);
         isPaused = false;
     }
 
