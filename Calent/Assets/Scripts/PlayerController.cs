@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FishNet.Connection;
-using FishNet.Object;
+using Photon.Pun;
 
 
 //This is made by Bobsi Unity - Youtube
-public class PlayerController : NetworkBehaviour
+public class PlayerController : MonoBehaviourPunCallbacks
 {
     [Header("Base setup")]
     public float walkingSpeed = 7.5f;
@@ -30,22 +29,6 @@ public class PlayerController : NetworkBehaviour
     private float cameraYOffset = 0.4f;
     private Camera playerCamera;
 
-
-    public override void OnStartClient()
-    {
-        base.OnStartClient();
-        if (base.IsOwner)
-        {
-            playerCamera = Camera.main;
-            playerCamera.transform.position = new Vector3(transform.position.x, transform.position.y + cameraYOffset, transform.position.z);
-            playerCamera.transform.SetParent(transform);
-        }
-        else
-        {
-            gameObject.GetComponent<PlayerController>().enabled = false;
-        }
-    }
-
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -55,8 +38,21 @@ public class PlayerController : NetworkBehaviour
         Cursor.visible = false;
     }
 
-    void Update()
+
+
+    private void Update()
     {
+        if (photonView.IsMine)
+        {
+            playerCamera = Camera.main;
+            playerCamera.transform.position = new Vector3(transform.position.x, transform.position.y + cameraYOffset, transform.position.z);
+            playerCamera.transform.SetParent(transform);
+        }
+        else
+        {
+            gameObject.GetComponent<PlayerController>().enabled = false;
+        }
+
         bool isRunning = false;
 
         // Press Left Shift to run
@@ -96,5 +92,6 @@ public class PlayerController : NetworkBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
+        
     }
 }
