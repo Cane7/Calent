@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             bool isRunning = false;
 
             // Press Left Shift to run
-            isRunning = Input.GetKey(KeyCode.LeftShift);
+            isRunning = Input.GetKey(KeyCode.LeftControl);
 
             // We are grounded, so recalculate move direction based on axis
             Vector3 forward = transform.TransformDirection(Vector3.forward);
