@@ -26,8 +26,9 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [HideInInspector]
     public bool canMove = true;
 
+
     [SerializeField]
-    private float cameraYOffset = 0.4f;
+    private float cameraYOffset = 0.7f;
     private Camera playerCamera;
 
     void Start()
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             playerCamera = Camera.main;
             playerCamera.transform.position = new Vector3(transform.position.x, transform.position.y + cameraYOffset, transform.position.z);
             playerCamera.transform.SetParent(transform);
+
 
             bool isRunning = false;
 
@@ -97,6 +99,26 @@ public class PlayerController : MonoBehaviourPunCallbacks
         }
 
 
-        
+        //pause
+
+        bool pause = Input.GetKeyDown(KeyCode.Escape);
+
+        if (pause)
+        {
+            GameObject.Find("Pause").GetComponent<Pause>().TogglePause();
+        }
+
+        if (Pause.paused == true)
+        {
+
+            canMove = false;
+            pause = false;
+
+        } else if(Pause.paused == false)
+        {
+            canMove = true;
+            pause = true;
+        }
+
     }
 }
