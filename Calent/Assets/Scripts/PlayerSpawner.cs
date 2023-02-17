@@ -13,6 +13,7 @@ public class PlayerSpawner : MonoBehaviour
     {
         Vector3 position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z);
         PhotonNetwork.Instantiate(playerPrefab.name, position, Quaternion.identity);
+        Debug.Log("Player spawned");
     }
 
 }

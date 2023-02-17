@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
 
     [SerializeField]
-    private float cameraYOffset = 0.7f;
+    private float cameraYOffset = 1.0f;
     private Camera playerCamera;
 
     void Start()
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         if (view.IsMine)
         {
             playerCamera = Camera.main;
-            playerCamera.transform.position = new Vector3(transform.position.x, transform.position.y + cameraYOffset, transform.position.z);
+            playerCamera.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             playerCamera.transform.SetParent(transform);
 
 

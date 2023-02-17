@@ -9,6 +9,7 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
+        Debug.Log("Connected!");
     }
 
     public override void OnConnectedToMaster()
@@ -19,6 +20,7 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         SceneManager.LoadScene("Menu");
+        Debug.Log("Joined Lobby!");
     }
 
 }
